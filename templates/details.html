@@ -1,0 +1,14 @@
+    <h1>JUST DO IT</h1>
+        <form class = "task-form">
+            <div>
+                <input type="text" name="taskname">
+            </div>
+            <button>+</button>
+        </form>
+        <ul>
+          <% _.forEach(data, function(d){ %>
+            <li>
+                <span><%= d.tasks %></span>
+                <input type="checkbox">
+            </li>
+            <%})%>
