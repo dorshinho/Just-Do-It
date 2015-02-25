@@ -13,7 +13,7 @@ function app(){
         {url: "./bower_components/lodash/lodash.min.js"},
         {url: "./bower_components/backbone/backbone.js"},
         {url: "./bower_components/react/react.min.js"},
-        {url: "./node_modules/jsnox/index.js"},
+        // {url: "./node_modules/jsnox/index.js"},
         {url: "./bower_components/pace/pace.min.js"},
         {url: "./js/TemplateView.js"},
         {url: "./js/tasklist.js"}
@@ -22,7 +22,7 @@ function app(){
         document.querySelector("html").style.opacity = 1;
         // start app?
 
-        new Backbone.TasksRouter()
+        new Backbone.TasksRouter();
     })
 
 }

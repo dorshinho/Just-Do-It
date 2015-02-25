@@ -14,9 +14,6 @@
     Backbone.ItemView = Backbone.TemplateView.extend({
         el: ".description",
         view: "details",
-     addDetials: function(e){
-
-        }
     })
 
     Backbone.TasksView = Backbone.TemplateView.extend({
@@ -42,7 +39,7 @@
     })
 
     var testData = [{
-        tasks: "Run 5k"
+        tasks: "Run 2k"
     }, {
         tasks: "Eat"
     }, {
@@ -68,11 +65,14 @@
         },
         home: function() {
             this.view.render();
+            this.collection.models[0].view.el.innerHTML = '';
         },
          details: function(id) {
-        console.log(this.collection)
-
-            this.view.render();
+        var deets = this.collection.models.filter(function(val) {
+    return val.get('tasks') === id
+})[0]
+        deets.view.render();
+        this.view.el.innerHTML = '';
         }
 
     })
